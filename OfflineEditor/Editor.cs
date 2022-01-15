@@ -6,6 +6,8 @@ using System.Linq;
 namespace Editor
 {
 
+    // https://codereview.stackexchange.com/questions/191503/simple-console-text-editor
+
     public class Editor
     {
 
