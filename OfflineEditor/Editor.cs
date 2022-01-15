@@ -36,7 +36,7 @@ namespace Editor
                 if (info.Key == ConsoleKey.Backspace && Console.CursorLeft > pos)
                 {
                     chars.RemoveAt(chars.Count - 1);
-                    Console.CursorLeft -= 1;
+                    Console.CursorLeft -= 1;`
                     Console.Write(' ');
                     Console.CursorLeft -= 1;
                 }
