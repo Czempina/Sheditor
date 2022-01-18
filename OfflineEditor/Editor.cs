@@ -50,9 +50,9 @@ namespace Editor
                     Console.Write(info.KeyChar);
                     chars.Add(info.KeyChar);
                 }
-                else if (info.Key == ConsoleKey.CursorLeft) {
-                    Console.CursorLeft -= 1;
-                }
+                //else if (info.Key == ConsoleKey.CursorLeft) {
+                //    Console.CursorLeft -= 1;
+                //}
                 else if (info.Key == ConsoleKey.Escape) {
                     break;
                 }

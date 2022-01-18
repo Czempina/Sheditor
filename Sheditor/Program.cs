@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.IO;
 
 namespace Sheditor
 {
@@ -11,11 +12,13 @@ namespace Sheditor
 
         static void Main(string[] args)
         {
+            string path = "C:/Users/Czemp/OneDrive/Pulpit/BIP/PolitechnikaPoznańska/Sieci V/Czempina/Sheditor/test.txt";
+
             //---listen at the specified IP and port no.---
             IPAddress localAdd = IPAddress.Parse(SERVER_IP);
             TcpListener listener = new TcpListener(localAdd, PORT_NO);
-            string text = "";
-            
+            string text = File.ReadAllText(path);
+
             while (true)
             {
                 Console.WriteLine("Listening...");
@@ -32,8 +35,18 @@ namespace Sheditor
 
                 //---convert the data received into a string---
                 string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-
-                text = text + dataReceived;
+                if (dataReceived == "USUWAJ" && text.Length > 0)
+                {
+                    text = text.Remove(text.Length - 1, 1);
+                }
+                else if (dataReceived == "ENTERUJ")
+                {
+                    text = text + '\n';
+                }
+                else
+                {
+                    text = text + dataReceived;
+                }
 
                 Console.WriteLine("text : " + text);
 
@@ -44,6 +57,7 @@ namespace Sheditor
                 nwStream.Write(bytesWrite, 0, bytesWrite.Length);
                 client.Close();
                 listener.Stop();
+                File.WriteAllText(path, text);
             }
             Console.ReadLine();
         }
