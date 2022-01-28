@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SheditorClient", "SheditorC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfflineEditor", "OfflineEditor\OfflineEditor.csproj", "{C5E10547-02DA-4881-9530-60B625612C95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineEditor", "OfflineEditor\OfflineEditor.csproj", "{35E38E26-0B46-4C86-92A0-383ABCDAC7FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

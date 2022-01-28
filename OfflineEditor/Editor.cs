@@ -6,6 +6,8 @@ using System.Linq;
 namespace Editor
 {
 
+    // https://codereview.stackexchange.com/questions/191503/simple-console-text-editor
+
     public class Editor
     {
 
@@ -36,7 +38,7 @@ namespace Editor
                 if (info.Key == ConsoleKey.Backspace && Console.CursorLeft > pos)
                 {
                     chars.RemoveAt(chars.Count - 1);
-                    Console.CursorLeft -= 1;
+                    Console.CursorLeft -= 1;`
                     Console.Write(' ');
                     Console.CursorLeft -= 1;
                 }
